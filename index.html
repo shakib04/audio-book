@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Audio Book</title>
+
+    
+
+    <style>
+
+        body{
+            background-image: linear-gradient(to bottom left, #f53b57, #ffc048);
+            background-repeat: no-repeat;
+        }
+
+        .all-btns{
+            
+        }
+
+        .all-btns button{
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .all-btns button:hover{
+            background-color: #485460;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="all-btns">
+
+        <!-- <button class="btn">a</button>
+        <button class="btn">b</button>
+        <button class="btn">c</button>
+        <button class="btn">d</button> -->
+    </div>
+
+    <script>
+
+
+        var bbb = document.querySelector(".all-btns").innerHTML;
+        for (let j = 0; j < 26; j++) {
+            bbb = bbb + '<button class="btn">' + String.fromCharCode(97 + j) + '</button>';
+        }
+        document.querySelector(".all-btns").innerHTML = bbb;
+
+
+
+        var btns = document.querySelectorAll(".btn").length;
+        var audio = document.createElement("audio");
+
+        for (let index = 0; index < btns; index++) {
+            console.log(index);
+            document.querySelectorAll(".btn")[index].addEventListener("click", function () {
+                var t = this.innerHTML;
+                if (true) {
+                    audio.src = "sounds/" + t + ".mp3";
+                    audio.play();
+                }
+                document.querySelector("h1").innerHTML = t +
+                    " is clicked";
+            })
+        }
+
+    </script>
+</body>
+
+</html>
