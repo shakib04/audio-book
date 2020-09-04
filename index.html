@@ -69,10 +69,18 @@
                     audio.src = t + ".mp3";
                     audio.play();
                 }
-                document.querySelector("h1").innerHTML = t +
+                //document.querySelector("h1").innerHTML = t +
                     " is clicked";
             })
         }
+        
+        
+        document.addEventListener("keypress", function (event) {
+    var t = event.key;
+    audio.src = "sounds/" + t + ".mp3";
+    audio.play();
+    //document.querySelector("h1").innerHTML = t + " is clicked";
+});
 
     </script>
 </body>
